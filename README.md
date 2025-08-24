@@ -18,6 +18,7 @@ The project demonstrates authentication, notifications, localization, and integr
 ## Demo
 
 ![Super App Demo](./assets/demo.gif)
+![Super App Demo](./assets/demo-ar.gif)
 
 ---
 
