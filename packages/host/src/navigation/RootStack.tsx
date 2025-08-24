@@ -10,18 +10,21 @@ import MiniAppLoader from './MiniAppLoader';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import SettingScreen from '../screens/SettingScreen/SettingScreen';
 import NotificationsScreen from '../screens/NotificationsScreen/NotificationsScreen';
+import { useSelector } from 'react-redux';
 
+const Stack = createNativeStackNavigator();
 
-const RootStack = () => {
+const AuthStack = () => (
+  <Stack.Navigator screenOptions={screenoptions}>
+    <Stack.Screen name={ROOT_PAGE_URL.Login} component={LoginScreen} />
+  </Stack.Navigator>
+);
 
-    const Stack = createNativeStackNavigator();
-    // const inititalRoute = ROOT_PAGE_URL.Home;    
-    
+const AppStack = () => {    
     
     return (
     <Stack.Navigator screenOptions={screenoptions}>
       <Stack.Screen name={ROOT_PAGE_URL.Home} component={HomeScreen} />
-      <Stack.Screen name={ROOT_PAGE_URL.Login} component={LoginScreen} />
       <Stack.Screen name={ROOT_PAGE_URL.Profile} component={ProfileScreen} />
       <Stack.Screen name={ROOT_PAGE_URL.Settings} component={SettingScreen} />
       <Stack.Screen name={ROOT_PAGE_URL.Notification} component={NotificationsScreen} />
@@ -39,5 +42,12 @@ const RootStack = () => {
    
   )
 }
+
+const RootStack = () => {
+  const token = useSelector((state: any) => state.auth.isAuthenticated);
+  const isAuthenticated = !!token;
+  return isAuthenticated ? <AppStack /> : <AuthStack />;
+};
+
 
 export default RootStack

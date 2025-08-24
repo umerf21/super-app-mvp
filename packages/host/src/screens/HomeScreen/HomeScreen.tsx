@@ -12,25 +12,27 @@ import { styles } from './styles'
 import { TouchableOpacity } from 'react-native'
 import Icon from "react-native-vector-icons/Ionicons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useTranslation } from 'react-i18next'
 
 const HomeScreen = () => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
+  const {t} = useTranslation()
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title="Dashboard" />
+      <Header title={t('pages.dashboard')} />
 
       <View style={styles.logoRow}>
         <Image source={images.logoColor} style={styles.logoImage} resizeMode="contain" />
-        <Text style={styles.logoText}>Super App</Text>
+        <Text style={styles.logoText}>{t('home.superapp')}</Text>
       </View>
 
       {/* <UserCard /> */}
       <Banner />
 
       <View style={styles.sectionContainer}>
-        <Text style={styles.sectionTitle}>Mini Apps</Text>
+        <Text style={styles.sectionTitle}>{t('home.miniApps')}</Text>
         <FlatList
           data={MINI_APPS}
           horizontal

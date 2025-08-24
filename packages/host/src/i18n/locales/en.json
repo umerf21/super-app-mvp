@@ -6,8 +6,16 @@
     "password": "Password",
     "button": "Login"
   },
+  "pages":{
+    "dashboard":"Dashboard",
+    "settings":"Settings",
+    "profile":"Profile",
+    "notification":"Notification"
+  },
   "home": {
-    "title": "Home"
+    "title": "Home",
+    "superapp":"Super App",
+    "miniApps":"Mini Apps"
   },
   "profile": {
     "title": "Profile",

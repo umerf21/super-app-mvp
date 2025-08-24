@@ -19,8 +19,8 @@ const Banner = () => {
         resizeMode="contain"
       />
       <View style={styles.textContainer}>
-        <Text style={styles.subtitle}>{t('lorem.ipsum')}</Text>
-        <Text style={styles.title}>{t('superapp')}</Text>
+        {/* <Text style={styles.subtitle}>{t('lorem.ipsum')}</Text> */}
+        <Text style={styles.title}>{t('home.superapp')}</Text>
       </View>
     </View>
   );

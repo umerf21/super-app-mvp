@@ -6,6 +6,8 @@ import TopDownMenu from "./TopDownMenu";
 import Icon from "react-native-vector-icons/Ionicons"
 import { styles } from "./style";
 import { colors } from "../../theme";
+import { CommonActions, useNavigation } from "@react-navigation/native";
+import { ROOT_PAGE_URL } from "../../navigation/navigation.types";
 
 interface HeaderProps {
   title?: string;
@@ -16,10 +18,24 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, showBack = false, onBack, insideNestedStack= false }) => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const navigation = useNavigation();
+
+  const handleBack = () => {
+    console.log("insideNestedStack",insideNestedStack);
+    
+    if(insideNestedStack)
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 1,
+          routes: [{ name: ROOT_PAGE_URL.Home }],
+        }) 
+      )
+    else onBack?.()
+  }
 
   return (
     <View style={styles.container}>
-      {showBack && <TouchableOpacity onPress={onBack}>
+      {showBack && <TouchableOpacity onPress={handleBack}>
          <Icon name={insideNestedStack ? "close" : "arrow-back"} size={24} color="black" />
       </TouchableOpacity>
       }

@@ -9,18 +9,13 @@ export const MINI_APPS: MiniApp[] = [
     color: colors.notesPrimary, // Blue
     load: () => import('notes/App'),
   },
+
+  //for later
   // {
   //   id: "todos",
   //   title: "Todos",
   //   icon: "checkmark-done-outline",
   //   color: colors.todosPrimary, // Purple
   //   load: () => import("./scenes/todoList/TodoList"),
-  // },
-  // {
-  //   id: "news",
-  //   title: "News",
-  //   icon: "newspaper-outline",
-  //   color: colors.newsPrimary, // Violet / Indigo-ish
-  //   load: () => import("./scenes/newsfeed/Newsfeed"),
   // },
 ];

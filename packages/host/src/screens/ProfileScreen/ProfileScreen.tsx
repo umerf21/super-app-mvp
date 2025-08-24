@@ -6,11 +6,14 @@ import { ROOT_PAGE_URL } from '../../navigation/navigation.types';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../theme';
+import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 
 const ProfileScreen = () => {
- 
+  const auth = useSelector((state:any) => state?.auth)
   const nav = useNavigation()
+  const {t} = useTranslation()
 
   return (
     <SafeAreaView style={{flex:1, backgroundColor:colors.background}}>
@@ -19,11 +22,11 @@ const ProfileScreen = () => {
       <Text style={styles.title}>User Name</Text>
 
       <View style={styles.infoContainer}>
-        <Text style={styles.label}>Access Token:</Text>
-        <Text numberOfLines={1} style={styles.value}>{ 'N/A'}</Text>
+        <Text style={styles.label}>{t('profile.accessToken')}</Text>
+        <Text numberOfLines={1} style={styles.value}>{auth.accessToken}</Text>
 
-        <Text style={styles.label}>ID Token:</Text>
-        <Text numberOfLines={1} style={styles.value}>{'N/A'}</Text>
+        <Text style={styles.label}>{t('profile.idToken')}</Text>
+        <Text numberOfLines={1} style={styles.value}>{auth.idToken}</Text>
       </View>
 
     
