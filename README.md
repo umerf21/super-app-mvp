@@ -10,7 +10,7 @@ The project demonstrates authentication, notifications, localization, and integr
 1. Super App using Re.Pack v5 and Rspack with Module Federation Plugin v2  
 2. Authentication using Keycloak PKCE (via `react-native-app-auth`)  
 3. Notifications using Notifee (demo: notification triggered every 1 min)  
-4. Localization in English and Arabic using i18n with full RTL support  
+4. Localization in English and Arabic using i18n 
 5. Mini App architecture (e.g., Notes app) dynamically loaded via config and single loader  
 
 ---
