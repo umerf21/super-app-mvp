@@ -1,0 +1,42 @@
+{
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Please log in to continue",
+    "username": "Username",
+    "password": "Password",
+    "button": "Login"
+  },
+  "home": {
+    "title": "Home"
+  },
+  "profile": {
+    "title": "Profile",
+    "accessToken": "Access Token:",
+    "idToken": "ID Token:",
+    "logout": "Logout"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language"
+  },
+  "notes": {
+    "title": "Notes",
+    "edit": "Edit Note",
+    "newNote": "New Note"
+  },
+  "todos": {
+    "title": "Todos",
+    "add": "Add Todo"
+  },
+  "news": {
+    "title": "News"
+  },
+  "miniApp": {
+    "back": "Back",
+    "close": "Close",
+    "more": "More",
+    "home": "Home",
+    "profile": "Profile",
+    "settings": "Settings"
+  }
+}
