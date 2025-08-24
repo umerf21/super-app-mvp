@@ -1,0 +1,26 @@
+{
+  "name": "super-app-mono-repo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "run:host:ios": "yarn workspace host ios",
+    "run:host:android": "yarn workspace host android",
+    "start": "node scripts/start.js",
+    "pods": "yarn workspaces foreach run pods",
+    "pods:update": "yarn workspaces foreach run pods:update",
+    "lint": "yarn workspaces foreach run lint",
+    "test": "yarn workspaces foreach run test",
+    "typecheck": "yarn workspaces foreach run typecheck",
+    "align-deps": "yarn workspaces foreach run align-deps",
+    "check-deps": "yarn workspaces foreach run check-deps"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
+
